@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
-  <title>xjh&#39;s blog</title>
+  <title>js | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xjh&#39;s blog">
-<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/index.html">
+  <meta name="description" content="a*b">
+<meta name="keywords" content="1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js">
+<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/03/15/js/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
+<meta property="og:description" content="a*b">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T00:03:44.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjh&#39;s blog">
+<meta name="twitter:title" content="js">
+<meta name="twitter:description" content="a*b">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -138,16 +143,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/15/js/">js</a>
+    <h1 class="article-title" itemprop="name">
+      js
     </h1>
   
 
@@ -161,7 +164,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>a*b</p>
-        
+<a id="more"></a>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">5e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> Pi=<span class="number">3.1415926535898</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    node (<span class="keyword">double</span> xx=<span class="number">0</span>,<span class="keyword">double</span> yy=<span class="number">0</span>)&#123;x=xx,y=yy;&#125;</span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">&#125;;</span><br><span class="line">node <span class="keyword">operator</span> + (node a,node b)&#123;<span class="keyword">return</span> node(a.x+b.x,a.y+b.y);&#125;</span><br><span class="line">node <span class="keyword">operator</span> - (node a,node b)&#123;<span class="keyword">return</span> node(a.x-b.x,a.y-b.y);&#125;</span><br><span class="line">node <span class="keyword">operator</span> * (node a,node b)&#123;<span class="keyword">return</span> node(a.x*b.x-a.y*b.y,b.x*a.y+a.x*b.y);&#125;</span><br><span class="line">node <span class="keyword">operator</span> / (node a,node b)</span><br><span class="line">&#123;</span><br><span class="line">  	<span class="keyword">double</span> t=b.x*b.x+b.y*b.y;</span><br><span class="line">  	<span class="keyword">return</span> node((a.x*b.x+a.y*b.y)/t,(b.x*a.y-a.x*b.y)/t);</span><br><span class="line">&#125;</span><br><span class="line">node w[N],b[N],c[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fft</span><span class="params">(node *f,<span class="keyword">int</span> len,<span class="keyword">int</span> op)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  	<span class="keyword">if</span>(!len)<span class="keyword">return</span> ;</span><br><span class="line">  	node fl[len+<span class="number">1</span>],fr[len+<span class="number">1</span>];</span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;len;k++)</span><br><span class="line">  	&#123;</span><br><span class="line">      	fl[k]=f[k&lt;&lt;<span class="number">1</span>];</span><br><span class="line">        fr[k]=f[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    fft(fl,len&gt;&gt;<span class="number">1</span>,op);</span><br><span class="line">    fft(fr,len&gt;&gt;<span class="number">1</span>,op);</span><br><span class="line">    node tmp,buf;</span><br><span class="line">    tmp=node(<span class="built_in">cos</span>(Pi/len),<span class="built_in">sin</span>(Pi/len)*op);</span><br><span class="line">    buf.x=<span class="number">1</span>;buf.y=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;len;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        node t=buf*fr[k];</span><br><span class="line">    	f[k]=fl[k]+t;</span><br><span class="line">    	f[k+len]=fl[k]-t;</span><br><span class="line">    	buf=buf*tmp;</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;b[i].x);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)<span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;c[i].x);</span><br><span class="line">    <span class="keyword">for</span>(m+=n,n=<span class="number">1</span>;n&lt;=m;n&lt;&lt;=<span class="number">1</span>);</span><br><span class="line">    fft(b,n&gt;&gt;<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    fft(c,n&gt;&gt;<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)b[i]=b[i]*c[i];</span><br><span class="line">    fft(b,n&gt;&gt;<span class="number">1</span>,<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;++i)<span class="built_in">printf</span>(<span class="string">"%.0f "</span>,<span class="built_in">fabs</span>(b[i].x)/n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hahaha</span><br></pre></td></tr></table></figure>
       
 
       
@@ -183,16 +188,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/15/js/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xuxuxuxuxuxjh.github.io/2019/03/15/js/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/14/xjhakzjoi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xjhakzjoi</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -212,236 +276,14 @@
 
 
 
-
   
-    <article id="post-xjhakzjoi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/xjhakzjoi/">xjhakzjoi</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/14/xjhakzjoi/" class="archive-article-date">
-  	<time datetime="2019-03-14T07:57:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>sdajiosvdjlshxlsdnasdfnlasdglerwa</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">1</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/14/xjhakzjoi/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hahaha" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/hahaha/">hahaha</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/14/hahaha/" class="archive-article-date">
-  	<time datetime="2019-03-14T07:45:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="a-i"><a href="#a-i" class="headerlink" title="$a_i$"></a>$a_i$</h1><p>$a+b=c$</p>
-<h1 id="你好-你好-这是测试！"><a href="#你好-你好-这是测试！" class="headerlink" title="你好 你好 这是测试！"></a>你好 你好 这是测试！</h1><h2 id="二级测试"><a href="#二级测试" class="headerlink" title="二级测试"></a>二级测试</h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">1</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/14/hahaha/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/hello-world/">你好，世界！</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-14T05:14:03.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/14/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -464,8 +306,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
