@@ -167,18 +167,7 @@
         <h2 id="A-Split"><a href="#A-Split" class="headerlink" title="A.Split"></a>A.Split</h2><p>​    贪心，很明显分得要尽量均匀。</p>
 <p>​    二分分成几段（即答案），可以$O(n)$判断，也可$O(1)$判。</p>
 <p>​    时间复杂度$O(log(n))$</p>
-<h2 id="B-Xor"><a href="#B-Xor" class="headerlink" title="B.Xor"></a>B.Xor</h2><p>​    这个题目有两个限制：一个是𝑥𝑜𝑟和相等，第二个是b[i]小于等于a[i]</p>
-<p>​    我们先分析第二个限制，我们从高位往低位考虑。对于一个方案，肯定有一个位它的上限为1，但方案中选为0</p>
-<p>​    当一个数有一位上限为1但实际为0时，显然低位是可以随便乱选的，怎么选都小于原上限</p>
-<p>​    $f[i][j][k]$表示前𝑖个数，当前位𝑥𝑜𝑟和为𝑗，是否有数小于上限的方案数</p>
-<p>​    当$a[i]  and  (1&lt;&lt;j)==1$时</p>
-<p>​    $f[i][k\wedge 1][p]=(f[i][k\wedge1][p]+f[i-1][k][p]\times (a[i]+1)%mod)%mod;    $            </p>
-<p>​    $f[i][k][1]=(f[i][k][1]+f[i-1][k][p]\times(1&lt;&lt;j)%mod)%mod;$</p>
-<p>​    当$a[i]  and  (1&lt;&lt;j)==0$时</p>
-<p>​    $f[i][k][p]=(f[i][k][p]+f[i-1][k][p]\times(a[i]+1)%mod)%mod;$</p>
-<p>​    最后把$\frac{𝑓[𝑛][𝑠𝑢𝑚][1]}{2^{𝑝−1}} $累加到答案即可</p>
-<p>​    时间复杂度$𝑂(𝑛 * 𝑙𝑜𝑔(𝑎[𝑖]))​$</p>
-
+        
       
 
       
