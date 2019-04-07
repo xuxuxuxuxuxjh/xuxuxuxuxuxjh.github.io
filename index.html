@@ -144,6 +144,116 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-模拟赛4-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/模拟赛4-7/">模拟赛4.7</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/07/模拟赛4-7/" class="archive-article-date">
+  	<time datetime="2019-04-07T04:40:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-划水"><a href="#A-划水" class="headerlink" title="A.划水:"></a>A.划水:</h2><p>这题不难。稍微想一下就会了。</p>
+<p>我们先看样例:1021这个数。</p>
+<p>我们把1021这个数的每一位拆开，就是1，0，2，1。</p>
+<p>我们考虑每个数对答案的贡献：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>:<span class="number">1</span>+<span class="number">10</span>+<span class="number">100</span>+<span class="number">1000</span>=<span class="number">1111</span></span><br><span class="line"><span class="number">0</span>:<span class="number">0</span></span><br><span class="line"><span class="number">2</span>:<span class="number">2</span>+<span class="number">20</span>    +    <span class="number">2</span>+<span class="number">20</span></span><br><span class="line"><span class="number">1</span>:<span class="number">1</span>+<span class="number">1</span>     +    <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>加号前后两部份是不同的。</p>
+<p>前一部分是，以前面的数开头的“子数”。后一部分是，以这个数开头的“子数”</p>
+<p>我们先预处理1，11，111，1111…….</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ans=ans+(s[i]<span class="number">-48</span>)*sum[n-i+<span class="number">1</span>]*(xu+<span class="number">1</span>);</span><br><span class="line">xu就是前面的非<span class="number">0</span>的数的个数。</span><br><span class="line">前一部分的贡献就是(s[i]<span class="number">-48</span>)*sum[n-i+<span class="number">1</span>]*xu</span><br><span class="line">后一部分的贡献就是(s[i]<span class="number">-48</span>)*sum[n-i+<span class="number">1</span>]*<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100005</span>;</span><br><span class="line"><span class="keyword">int</span> T,sum[N];</span><br><span class="line"><span class="keyword">char</span> s[N+<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a+=b;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=mod)a-=mod;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"swim.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"swim.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++)sum[i]=(sum[i<span class="number">-1</span>]*<span class="number">10</span>+<span class="number">1</span>)%mod;</span><br><span class="line">	<span class="keyword">while</span>(T--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>,xu=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> n=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="keyword">if</span>(s[i]!=<span class="string">'0'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				ans=add(ans,(s[i]<span class="number">-48</span>)*sum[n-i+<span class="number">1</span>]%mod*(xu+<span class="number">1</span>)%mod);</span><br><span class="line">				xu++;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-吃瓜"><a href="#B-吃瓜" class="headerlink" title="B.吃瓜"></a>B.吃瓜</h2><p>这题很难啊，我只会50分的，50分的要用期望+高斯消元。</p>
+<p>我们先设$f[i][j]$为从(i,j)到最后一行的期望步数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i][j]=f[i][j]/<span class="number">4</span>+f[i][j<span class="number">-1</span>]/<span class="number">4</span>+f[i][j+<span class="number">1</span>]/<span class="number">4</span>+f[i+<span class="number">1</span>][j]/<span class="number">4</span>+<span class="number">1</span>   (<span class="number">1</span>&lt;j&lt;m)</span><br><span class="line">f[i][j]=f[i][j]/<span class="number">3</span>+f[i+<span class="number">1</span>][j]/<span class="number">3</span>+f[i][j+<span class="number">1</span>]/<span class="number">3</span>+<span class="number">1</span>    j=<span class="number">1</span></span><br><span class="line">f[i][j]=f[i][j]/<span class="number">3</span>+f[i+<span class="number">1</span>][j]/<span class="number">3</span>+f[i][j<span class="number">-1</span>]/<span class="number">3</span>+<span class="number">1</span>    j=m</span><br></pre></td></tr></table></figure>
+<p>初始化是什么？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[n][i]=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>两维的数组不好，我们可以压掉第一维（比较好高斯消元）。</p>
+<p>然后，我们化一下式子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f[i]=f[i]/<span class="number">3</span>+f[i+<span class="number">1</span>]/<span class="number">3</span>+last[i]/<span class="number">3</span>+<span class="number">1</span></span><br><span class="line"><span class="number">2</span>/<span class="number">3</span> * f[i]=f[i+<span class="number">1</span>]/<span class="number">3</span>+last[i]/<span class="number">3</span>+<span class="number">1</span></span><br><span class="line">f[i]=f[i+<span class="number">1</span>]/<span class="number">2</span>+last[i]/<span class="number">2</span> + <span class="number">3</span>/<span class="number">2</span></span><br><span class="line">f[i]-f[i+<span class="number">1</span>]=last[i]/<span class="number">2</span> + <span class="number">3</span>/<span class="number">2</span>         (i=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f[i]=f[i]/<span class="number">3</span>+f[i<span class="number">-1</span>]/<span class="number">3</span>+last[i]/<span class="number">3</span>+<span class="number">1</span></span><br><span class="line"><span class="number">2</span>/<span class="number">3</span> * f[i]=f[i<span class="number">-1</span>]/<span class="number">3</span>+last[i]/<span class="number">3</span>+<span class="number">1</span></span><br><span class="line">f[i]=f[i<span class="number">-1</span>]/<span class="number">2</span>+last[i]/<span class="number">2</span> + <span class="number">3</span>/<span class="number">2</span></span><br><span class="line">f[i]-f[i<span class="number">-1</span>]=last[i]/<span class="number">2</span> + <span class="number">3</span>/<span class="number">2</span>         (i=m)</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f[i]=f[i]/<span class="number">4</span>+f[i<span class="number">-1</span>]/<span class="number">4</span>+f[i+<span class="number">1</span>]/<span class="number">4</span>+last[i]/<span class="number">4</span>+<span class="number">1</span></span><br><span class="line"><span class="number">3</span>/<span class="number">4</span> * f[i]=f[i<span class="number">-1</span>]/<span class="number">4</span>+f[i+<span class="number">1</span>]/<span class="number">4</span>+last[i]/<span class="number">4</span>+<span class="number">1</span></span><br><span class="line">f[i]=f[i<span class="number">-1</span>]/<span class="number">3</span>+f[i+<span class="number">1</span>]/<span class="number">3</span>+last[i]/<span class="number">3</span> + <span class="number">4</span>/<span class="number">3</span></span><br><span class="line">f[i]-f[i<span class="number">-1</span>]-f[i+<span class="number">1</span>]=last[i]/<span class="number">3</span> + <span class="number">4</span>/<span class="number">3</span>         (<span class="number">1</span>&lt;i&lt;m)</span><br></pre></td></tr></table></figure>
+<p>这不就是高斯消元吗，对每一行做一遍高斯消元，把答案记录在last数组里</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,x,y;</span><br><span class="line"><span class="keyword">double</span> Div,ans[<span class="number">105</span>],f[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"eat.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"eat.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;m,&amp;n,&amp;y,&amp;x);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> p=m<span class="number">-1</span>;p&gt;=y;p--)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span>(f));</span><br><span class="line">	f[<span class="number">1</span>][n+<span class="number">1</span>]=<span class="number">3.0</span>/<span class="number">2.0</span>+ans[<span class="number">1</span>]/<span class="number">2.0</span>;</span><br><span class="line">	f[n][n+<span class="number">1</span>]=<span class="number">3.0</span>/<span class="number">2.0</span>+ans[n]/<span class="number">2.0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)f[i][n+<span class="number">1</span>]=<span class="number">4.0</span>/<span class="number">3.0</span>+ans[i]/<span class="number">3.0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)f[i][i]=<span class="number">1.0</span>;</span><br><span class="line">	f[<span class="number">1</span>][<span class="number">2</span>]=f[n][n<span class="number">-1</span>]=<span class="number">-1.0</span>/<span class="number">2.0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)f[i][i<span class="number">-1</span>]=f[i][i+<span class="number">1</span>]=<span class="number">-1.0</span>/<span class="number">3.0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Div=f[i][i];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n+<span class="number">1</span>;j++)f[i][j]/=Div;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			Div=f[j][i];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=i;k&lt;=n+<span class="number">1</span>;k++)f[j][k]-=f[i][k]*Div;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ans[n]=f[n][n+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		ans[i]=f[i][n+<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)ans[i]-=ans[j]*f[i][j];</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.10lf"</span>,ans[x]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-真香"><a href="#C-真香" class="headerlink" title="C.真香"></a>C.真香</h2><p>50分</p>
+<p>较简单，直接m *  k就行了。</p>
+<p>就是对于读入一个数x，就改变a[x]的值即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,k,inv,a[N],b[N];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"qwq.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"qwq.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">		a[i]=(a[i]%mod+mod)%mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;b[i]);</span><br><span class="line">	<span class="keyword">while</span>(k--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			a[b[i]]=(a[b[i]+<span class="number">1</span>]+a[b[i]<span class="number">-1</span>]-a[b[i]]+mod)%mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,a[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>70分 </p>
+<p>m&lt;=3,这不就是让我们用矩阵优化吗</p>
+<p>有同学上来讲一下吗？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">-1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>			x1</span><br><span class="line"><span class="number">0</span> <span class="number">-1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span>			x2</span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">-1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>			x3</span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>			x1<span class="number">-1</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>    	     x2<span class="number">-1</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>   	 	x3<span class="number">-1</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>			x1+<span class="number">1</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>			x2+<span class="number">1</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span>  <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>			x3+<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>100分 </p>
+<p>我考场上想到了但没调出来，我们看50分的做法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[b[i]]=(a[b[i]+<span class="number">1</span>]+a[b[i]<span class="number">-1</span>]-a[b[i]]+mod)%mod;</span><br></pre></td></tr></table></figure>
+<p>这句话大家感觉熟悉吗，艹，这不是我们上次cf被fst的E题吗。</p>
+<p>这就是交换了相邻的两个差分数组的值。</p>
+<p>那不就可以直接算出每个差分数组经过k次转移后能到哪里。</p>
+<p>感觉：基础分100分</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模拟赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/07/模拟赛4-7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-牛客练习赛13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -856,86 +966,6 @@
 
 
   
-    <article id="post-牛客练习赛2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/牛客练习赛2/">牛客练习赛2</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/22/牛客练习赛2/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-Contest"><a href="#A-Contest" class="headerlink" title="A.Contest"></a>A.<a href="https://ac.nowcoder.com/acm/contest/4/A" target="_blank" rel="noopener">Contest</a></h2><p>​    这题好（话说牛客的题目都很好）</p>
-<p>​    我一眼看以为是到tarjan，后来发现可以转化为cdq分治求三维偏序问题</p>
-<p>​    我们把三场比赛的名次设为a[i],b[i],c[i].</p>
-<p>​    答案可以转化为求多少对是a[i]&gt;a[j],b[i]&gt;b[j],c[i]&gt;c[j]</p>
-<p>​    可以发现这不就是cdq分治求三维偏序吗</p>
-<p>​    cdq分治就是第一维排序，第二维归并排序，第三维树状数组</p>
-<p>​
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/牛客练习赛2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1054,11 +1084,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
+                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+                <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
               </li>
             
             <div class="clearfix"></div>
