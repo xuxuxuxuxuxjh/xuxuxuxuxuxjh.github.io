@@ -17,7 +17,7 @@
 <meta property="og:description" content="A.青蛙的约会exgcd裸题. 我们设时间为$t$ 可列出方程:$x+nt \equiv y+mt \pmod{l}$">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cdn.luogu.org/upload/pic/33545.png">
-<meta property="og:updated_time" content="2019-04-11T01:38:41.711Z">
+<meta property="og:updated_time" content="2019-04-11T01:41:33.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数论作业">
 <meta name="twitter:description" content="A.青蛙的约会exgcd裸题. 我们设时间为$t$ 可列出方程:$x+nt \equiv y+mt \pmod{l}$">
@@ -208,7 +208,7 @@
 <p>上次徐泽羽奆老口胡过了，这里就跳过了。</p>
 <h2 id="H-余数求和"><a href="#H-余数求和" class="headerlink" title="H.余数求和"></a>H.余数求和</h2><p>课上王之鉴奆佬讲过了。</p>
 <p>首先知道一点$a\%b$ 可以表示为$a-b*\lfloor\frac{a}{b}\rfloor$ </p>
-<p>#####ans=∑ k%i=∑ k-i*$\lfloor\frac{k}{i}\rfloor$</p>
+<p>ans=∑ k%i=∑ k-i*$\lfloor\frac{k}{i}\rfloor$</p>
 <p>$\lfloor\frac{k}{i}\rfloor$可以用除法分块做。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line">ll n,k,r,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;n,&amp;k);</span><br><span class="line">    ans=n*k;</span><br><span class="line">    <span class="keyword">for</span>(ll l=<span class="number">1</span>;l&lt;=n;l=r+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k/l!=<span class="number">0</span>)r=min(k/(k/l),n); </span><br><span class="line">        <span class="keyword">else</span> r=n;</span><br><span class="line">        ans=ans-(k/l)*(r-l+<span class="number">1</span>)*(l+r)/<span class="number">2</span>;<span class="comment">//高斯 </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="I-上帝与集合的正确用法"><a href="#I-上帝与集合的正确用法" class="headerlink" title="I.上帝与集合的正确用法"></a>I.上帝与集合的正确用法</h2><p>这题上课时也讲过了。</p>
@@ -464,11 +464,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
+                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+                <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
               </li>
              
               <li class="article-tag-list-item">
