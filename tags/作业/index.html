@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
-  <title>牛客练习赛4 | xjh&#39;s blog</title>
+  <title>Tag: 作业 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A. Laptop​    一眼看还以为是tarjan，后来发现就是要求xi&amp;lt;xj and yi&amp;lt;yj,这不就是二维偏序，直接上树状数组">
-<meta name="keywords" content="牛客练习赛">
-<meta property="og:type" content="article">
-<meta property="og:title" content="牛客练习赛4">
-<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/03/22/牛客练习赛4/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="xjh&#39;s blog">
+<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/tags/作业/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
-<meta property="og:description" content="A. Laptop​    一眼看还以为是tarjan，后来发现就是要求xi&amp;lt;xj and yi&amp;lt;yj,这不就是二维偏序，直接上树状数组">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T04:22:44.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="牛客练习赛4">
-<meta name="twitter:description" content="A. Laptop​    一眼看还以为是tarjan，后来发现就是要求xi&amp;lt;xj and yi&amp;lt;yj,这不就是二维偏序，直接上树状数组">
+<meta name="twitter:title" content="xjh&#39;s blog">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -147,189 +142,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-牛客练习赛4" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      牛客练习赛4
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/04/11/数论作业/" class="archive-article-date">
+  	<time datetime="2019-04-11T00:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/04/11/数论作业/">数论作业</a>
     </h1>
   
 
-        
-        <a href="/2019/03/22/牛客练习赛4/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-Laptop"><a href="#A-Laptop" class="headerlink" title="A. Laptop"></a>A.<a href="https://ac.nowcoder.com/acm/contest/16/A" target="_blank" rel="noopener"> Laptop</a></h2><p>​    一眼看还以为是tarjan，后来发现就是要求xi&lt;xj and yi&lt;yj,这不就是二维偏序，直接上树状数组</p>
-<a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,cnt,len,ans,b[N*<span class="number">2</span>],c[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">&#125;q[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(x&lt;N)</span><br><span class="line">	&#123;</span><br><span class="line">		c[x]++;</span><br><span class="line">		x+=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		res+=c[x];</span><br><span class="line">		x-=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x&lt;b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;q[i].x,&amp;q[i].y);</span><br><span class="line">		b[++cnt]=q[i].x;</span><br><span class="line">		b[++cnt]=q[i].y;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(b+<span class="number">1</span>,b+cnt+<span class="number">1</span>);</span><br><span class="line">	len=unique(b+<span class="number">1</span>,b+cnt+<span class="number">1</span>)-b<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		q[i].x=lower_bound(b+<span class="number">1</span>,b+len+<span class="number">1</span>,q[i].x)-b;</span><br><span class="line">		q[i].y=lower_bound(b+<span class="number">1</span>,b+len+<span class="number">1</span>,q[i].y)-b;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(q+<span class="number">1</span>,q+n+<span class="number">1</span>,cmp);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(sum(q[i].y)&gt;<span class="number">0</span>)ans++;</span><br><span class="line">		add(q[i].y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="B-Distance"><a href="#B-Distance" class="headerlink" title="B.Distance"></a>B.<a href="https://ac.nowcoder.com/acm/contest/16/B" target="_blank" rel="noopener">Distance</a></h2><p>​    这题转换一下，设$xi=ai<em>ai$, $yi=i</em>i$ ,这不就是<a href="https://www.luogu.org/problemnew/show/P5097" target="_blank" rel="noopener">[USACO2004OPEN]Cave Cows 2 洞穴里的牛之二</a> </p>
-<p>​    设$xi&gt;xj$,</p>
-<p>​    如果$yi&gt;yj$, $ans=xi-xj+yi-yj=(xi+yi)-(xj+yj)$</p>
-<p>​    如果$yi&lt;yj$, $ans=xi-xj+yj-yi=(xi-yi)+(xj-yj)$</p>
-<p>​    </p>
-<p>​    所以只要记录max，min(xi+yi)和(xi-yi)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">int</span> n,min1,min2,max1,max2,x,y;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	min1=min2=<span class="number">1e18</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;x);</span><br><span class="line">		x=x*x;y=i*i;</span><br><span class="line">		min1=min(min1,x+y);</span><br><span class="line">		max1=max(max1,x+y);</span><br><span class="line">		min2=min(min2,x-y);</span><br><span class="line">		max2=max(max2,x-y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;max(max1-min1,max2-min2);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="C-Sum"><a href="#C-Sum" class="headerlink" title="C.Sum"></a>C.<a href="https://ac.nowcoder.com/acm/contest/16/C" target="_blank" rel="noopener">Sum</a></h2><p>​    好题，难题，思路难度高。</p>
-<p>​    a[i]的每一位建一个树状数组，每次查询区间时，遍历每一位，考虑什么情况下，这一位是1（因为是0的话就不需要考虑了）</p>
-<p>​    就是要选2-sum个1，多项式定理告诉我们就是$2^p-1$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,opt,x,y,a[N],p[N],c[<span class="number">35</span>][N];</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gc getchar</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>,f=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	c=gc();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">1</span>;</span><br><span class="line">		c=gc();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))</span><br><span class="line">	&#123;</span><br><span class="line">		res=res*<span class="number">10</span>+c<span class="number">-48</span>;</span><br><span class="line">		c=gc();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(f)<span class="keyword">return</span> -res;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;<span class="built_in">putchar</span>(<span class="string">'-'</span>);x=-x;&#125;</span><br><span class="line">	<span class="keyword">int</span> y=<span class="number">10</span>,len=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(y&lt;=x)&#123;y*=<span class="number">10</span>;len++;&#125;</span><br><span class="line">	<span class="keyword">while</span>(len--)&#123;y/=<span class="number">10</span>;<span class="built_in">putchar</span>(x/y+<span class="number">48</span>);x%=y;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(x&lt;=n)</span><br><span class="line">	&#123;</span><br><span class="line">		c[id][x]+=y;</span><br><span class="line">		x+=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		res+=c[id][x];</span><br><span class="line">		x-=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	p[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)p[i]=<span class="number">1l</span>l*<span class="number">2</span>*p[i<span class="number">-1</span>]%mod;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=read();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">30</span>;j++)</span><br><span class="line">			<span class="keyword">if</span>(a[i]&amp;(<span class="number">1</span>&lt;&lt;j))add(j,i,<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	m=read();</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		opt=read();x=read();y=read();</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">30</span>;i++)</span><br><span class="line">				<span class="keyword">if</span>(a[x]&amp;(<span class="number">1</span>&lt;&lt;i))add(i,x,<span class="number">-1</span>);</span><br><span class="line">			a[x]=y;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">30</span>;i++)</span><br><span class="line">				<span class="keyword">if</span>(a[x]&amp;(<span class="number">1</span>&lt;&lt;i))add(i,x,<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">30</span>;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> k=sum(i,y)-sum(i,x<span class="number">-1</span>);</span><br><span class="line">				ans=(ans+<span class="number">1l</span>l*(p[k]<span class="number">-1</span>)*p[i]%mod)%mod;</span><br><span class="line">			&#125;</span><br><span class="line">			write(ans);<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    </p>
-<h2 id="D-Fancy-Signal-Translate"><a href="#D-Fancy-Signal-Translate" class="headerlink" title="D. Fancy Signal Translate"></a>D.<a href="https://ac.nowcoder.com/acm/contest/16/D" target="_blank" rel="noopener"> Fancy Signal Translate</a></h2><p>​    比较简单，难在判断是否相同和个数，判断是否相同可以用hash判，求个数可以用set去重，注意：答案是很小的，我只枚举到了20</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> len,ans,base=<span class="number">137</span>,mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;s[<span class="number">25</span>];</span><br><span class="line"><span class="keyword">char</span> c[<span class="number">1000005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,c+<span class="number">1</span>);</span><br><span class="line">	len=<span class="built_in">strlen</span>(c+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">20</span>&amp;&amp;i+j&lt;=len;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ans=(ans*base%mod+c[i+j]<span class="number">-48</span>)%mod;</span><br><span class="line">			s[j].insert(ans);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">20</span>;i++)</span><br><span class="line">		<span class="keyword">if</span>(s[i].size()!=(<span class="number">1</span>&lt;&lt;(i+<span class="number">1</span>)))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;i+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="E-Factorial-Surplus-Tail"><a href="#E-Factorial-Surplus-Tail" class="headerlink" title="E. Factorial Surplus Tail"></a>E.<a href="https://ac.nowcoder.com/acm/contest/16/E" target="_blank" rel="noopener"> Factorial Surplus Tail</a></h2><p>超难，我还不太懂。</p>
-<p>就是打表找规律，发现</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">k=<span class="number">0</span>： <span class="number">0</span> </span><br><span class="line">k=<span class="number">1</span>： <span class="number">00000</span> </span><br><span class="line">k=<span class="number">2</span>： <span class="number">0000011111000001111100000</span> </span><br><span class="line">k=<span class="number">3</span>： <span class="number">0000011111000001111100000</span>（重复五遍···）</span><br></pre></td></tr></table></figure>
-<p>预处理出前$25（5^2）$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">25</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		sum[i][<span class="number">0</span>]=sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">5</span>;</span><br><span class="line">		sum[i][<span class="number">1</span>]=sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">5</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		sum[i][<span class="number">0</span>]=sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">3</span>+sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">2</span>;</span><br><span class="line">		sum[i][<span class="number">1</span>]=sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">3</span>+sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">int</span> n,ans,tmp,mi[<span class="number">30</span>],sum[<span class="number">30</span>][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mi[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">25</span>;i++)mi[i]=mi[i<span class="number">-1</span>]*<span class="number">5</span>;</span><br><span class="line">	sum[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">25</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			sum[i][<span class="number">0</span>]=sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">5</span>;</span><br><span class="line">			sum[i][<span class="number">1</span>]=sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">5</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			sum[i][<span class="number">0</span>]=sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">3</span>+sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">2</span>;</span><br><span class="line">			sum[i][<span class="number">1</span>]=sum[i<span class="number">-1</span>][<span class="number">1</span>]*<span class="number">3</span>+sum[i<span class="number">-1</span>][<span class="number">0</span>]*<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	work();</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		ans=<span class="number">0</span>;tmp=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">25</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=(n/mi[i]);j++)</span><br><span class="line">            &#123;</span><br><span class="line">                ans+=sum[i][tmp];</span><br><span class="line">                <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)tmp^=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            n%=mi[i];</span><br><span class="line">        &#125;</span><br><span class="line">        ans+=sum[<span class="number">0</span>][tmp];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="F-Fantasy-Strange-Tree"><a href="#F-Fantasy-Strange-Tree" class="headerlink" title="F.Fantasy Strange Tree"></a>F.<a href="https://ac.nowcoder.com/acm/contest/16/F" target="_blank" rel="noopener">Fantasy Strange Tree</a></h2><p>​    这题比上题要好理解得多。可以把题看成一棵树，树上的点都可以向左，右扩展，问最后这棵树有多少点</p>
-<p>​    先考虑没有U的情况：dp，f[0]为没有左右儿子的点的个数，f[1]为没有右儿子但有左儿子的点的个数，</p>
-<p>​    f[2]为没有左儿子但有右儿子的点的个数,f[3]为左右儿子都有的点的个数</p>
-<p>​    L: </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">1</span>]=(f[<span class="number">1</span>]+f[<span class="number">0</span>])%mod;</span><br><span class="line">f[<span class="number">3</span>]=(f[<span class="number">3</span>]+f[<span class="number">2</span>])%mod;</span><br><span class="line">f[<span class="number">0</span>]=(f[<span class="number">0</span>]+f[<span class="number">2</span>])%mod;</span><br><span class="line">f[<span class="number">2</span>]=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p>​    R:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">2</span>]=(f[<span class="number">2</span>]+f[<span class="number">0</span>])%mod;</span><br><span class="line">f[<span class="number">3</span>]=(f[<span class="number">3</span>]+f[<span class="number">1</span>])%mod;</span><br><span class="line">f[<span class="number">0</span>]=(f[<span class="number">0</span>]+f[<span class="number">1</span>])%mod;</span><br><span class="line">f[<span class="number">1</span>]=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p>​    我们在考虑有U的点，我们发现一定是形成UUU…….LRLLLRRRLLL…….的形式，我们之间用栈判断一下</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(num)</span><br><span class="line">&#123;</span><br><span class="line">	ch=t[num--];</span><br><span class="line">     <span class="keyword">if</span>(ch==<span class="string">'L'</span>)f[<span class="number">1</span>]++;</span><br><span class="line">     <span class="keyword">else</span> f[<span class="number">2</span>]++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans,f[<span class="number">4</span>];</span><br><span class="line"><span class="keyword">char</span> ch,t[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(ch=getchar();ch&gt;=<span class="string">'A'</span>&amp;&amp;ch&lt;=<span class="string">'Z'</span>;ch=getchar())t[++num]=ch;</span><br><span class="line">    f[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ch=getchar();ch&gt;=<span class="string">'A'</span>&amp;&amp;ch&lt;=<span class="string">'Z'</span>;ch=getchar())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(ch==<span class="string">'U'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(num)</span><br><span class="line">            &#123;</span><br><span class="line">                ch=t[num--];</span><br><span class="line">                <span class="keyword">if</span>(ch==<span class="string">'L'</span>)f[<span class="number">1</span>]++;</span><br><span class="line">                <span class="keyword">else</span> f[<span class="number">2</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ch==<span class="string">'L'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            f[<span class="number">1</span>]=(f[<span class="number">1</span>]+f[<span class="number">0</span>])%mod;</span><br><span class="line">            f[<span class="number">3</span>]=(f[<span class="number">3</span>]+f[<span class="number">2</span>])%mod;</span><br><span class="line">            f[<span class="number">0</span>]=(f[<span class="number">0</span>]+f[<span class="number">2</span>])%mod;</span><br><span class="line">            f[<span class="number">2</span>]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ch==<span class="string">'R'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            f[<span class="number">2</span>]=(f[<span class="number">2</span>]+f[<span class="number">0</span>])%mod;</span><br><span class="line">            f[<span class="number">3</span>]=(f[<span class="number">3</span>]+f[<span class="number">1</span>])%mod;</span><br><span class="line">            f[<span class="number">0</span>]=(f[<span class="number">0</span>]+f[<span class="number">1</span>])%mod;</span><br><span class="line">            f[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">3</span>;i++)ans=(ans+f[i])%mod;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">作业</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://xuxuxuxuxuxjh.github.io/2019/03/22/牛客练习赛4/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/03/22/牛客练习赛6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          牛客练习赛6
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/03/22/牛客练习赛3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">牛客练习赛3</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -352,9 +218,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
