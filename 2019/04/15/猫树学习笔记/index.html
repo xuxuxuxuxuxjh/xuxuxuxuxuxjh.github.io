@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
-  <title>Archives: 2019/3 | xjh&#39;s blog</title>
+  <title>猫树学习笔记 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xjh&#39;s blog">
-<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/archives/2019/03/index.html">
+  <meta name="description" content="猫树：能干嘛？有什么用？ 能在O(n log(n))的时间里预处理,然后在O(1)的时间里求出区间答案">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="猫树学习笔记">
+<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/04/15/猫树学习笔记/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
+<meta property="og:description" content="猫树：能干嘛？有什么用？ 能在O(n log(n))的时间里预处理,然后在O(1)的时间里求出区间答案">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T23:14:20.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjh&#39;s blog">
+<meta name="twitter:title" content="猫树学习笔记">
+<meta name="twitter:description" content="猫树：能干嘛？有什么用？ 能在O(n log(n))的时间里预处理,然后在O(1)的时间里求出区间答案">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -142,326 +147,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-猫树学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      猫树学习笔记
+    </h1>
+  
+
+        
+        <a href="/2019/04/15/猫树学习笔记/" class="archive-article-date">
+  	<time datetime="2019-04-15T13:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="猫树："><a href="#猫树：" class="headerlink" title="猫树："></a>猫树：</h1><p>能干嘛？有什么用？</p>
+<p>能在O(n log(n))的时间里预处理,然后在O(1)的时间里求出区间答案</p>
+<a id="more"></a>
+<p>能O(1)时间求出区间答案，这点和st表很像，当猫树能做的比他多</p>
+<p>比如猫树能做区间最大字段和，但st表不行</p>
+<h2 id="建树"><a href="#建树" class="headerlink" title="建树:"></a>建树:</h2><p>建树方面，猫树的建树方法和zkw线段树很像，都是补成满二叉树</p>
+<p>为什么要补成满二叉树？</p>
+<p>因为满二叉树有特殊的性质：知道叶子节点的两个点l和r，我们就能快速得出两点的lca所在那一层。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d=Log[id[l]]-Log[id[l]^id[r]];<span class="comment">//d就是lca的层数</span></span><br></pre></td></tr></table></figure>
+<p>我们还要对每一层都线性遍历每个点(除最后一层)。</p>
+<p>比如求区间最大字段和，我们要从mid到l求出后缀和，还要从mid+1到r求出前缀和。</p>
+<p>相当于颗满二叉树的所有节点都去了一次，时间复杂度:O(n log(n))</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> nod,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)</span><br><span class="line">	&#123;</span><br><span class="line">		id[l]=nod;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> pre=a[mid],ma=a[mid];</span><br><span class="line">	p[d][mid]=pre;</span><br><span class="line">	s[d][mid]=ma;</span><br><span class="line">	ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=mid<span class="number">-1</span>;i&gt;=l;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		pre+=a[i];</span><br><span class="line">		ma+=a[i];</span><br><span class="line">		p[d][i]=max(p[d][i+<span class="number">1</span>],pre);</span><br><span class="line">		s[d][i]=max(s[d][i+<span class="number">1</span>],ma);</span><br><span class="line">		ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	&#125;</span><br><span class="line">	pre=ma=a[mid+<span class="number">1</span>];</span><br><span class="line">	p[d][mid+<span class="number">1</span>]=pre;</span><br><span class="line">	s[d][mid+<span class="number">1</span>]=ma;</span><br><span class="line">	ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=mid+<span class="number">2</span>;i&lt;=r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pre+=a[i];</span><br><span class="line">		ma+=a[i];</span><br><span class="line">		p[d][i]=max(p[d][i<span class="number">-1</span>],pre);</span><br><span class="line">		s[d][i]=max(s[d][i<span class="number">-1</span>],ma);</span><br><span class="line">		ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	&#125;</span><br><span class="line">	build(nod*<span class="number">2</span>,l,mid,d+<span class="number">1</span>);</span><br><span class="line">	build(nod*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,r,d+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查询："><a href="#查询：" class="headerlink" title="查询："></a>查询：</h2><p>查询需要注意的是如果区间是一个点，我们要特判，直接输出那个点的值。</p>
+<p>建树时已有提到如何求出l和r的lca的层数。</p>
+<p>得到层数后，就可以通过那一层的前后缀和快速求出答案。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)<span class="keyword">return</span> a[l];</span><br><span class="line">	<span class="keyword">int</span> d=Log[id[l]]-Log[id[l]^id[r]];</span><br><span class="line">	<span class="keyword">return</span> max(max(s[d][l],s[d][r]),p[d][l]+p[d][r]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是很简单，代码上也不比普通线段树长。</p>
+<p>附上全部代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mid (l+r)/2</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">5e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,l,r,len,Log[N],a[N],id[N],p[<span class="number">25</span>][N],s[<span class="number">25</span>][N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> nod,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)</span><br><span class="line">	&#123;</span><br><span class="line">		id[l]=nod;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> pre=a[mid],ma=a[mid];</span><br><span class="line">	p[d][mid]=pre;</span><br><span class="line">	s[d][mid]=ma;</span><br><span class="line">	ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=mid<span class="number">-1</span>;i&gt;=l;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		pre+=a[i];</span><br><span class="line">		ma+=a[i];</span><br><span class="line">		p[d][i]=max(p[d][i+<span class="number">1</span>],pre);</span><br><span class="line">		s[d][i]=max(s[d][i+<span class="number">1</span>],ma);</span><br><span class="line">		ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	&#125;</span><br><span class="line">	pre=ma=a[mid+<span class="number">1</span>];</span><br><span class="line">	p[d][mid+<span class="number">1</span>]=pre;</span><br><span class="line">	s[d][mid+<span class="number">1</span>]=ma;</span><br><span class="line">	ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=mid+<span class="number">2</span>;i&lt;=r;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pre+=a[i];</span><br><span class="line">		ma+=a[i];</span><br><span class="line">		p[d][i]=max(p[d][i<span class="number">-1</span>],pre);</span><br><span class="line">		s[d][i]=max(s[d][i<span class="number">-1</span>],ma);</span><br><span class="line">		ma=max(ma,<span class="number">0l</span>l);</span><br><span class="line">	&#125;</span><br><span class="line">	build(nod*<span class="number">2</span>,l,mid,d+<span class="number">1</span>);</span><br><span class="line">	build(nod*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,r,d+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)<span class="keyword">return</span> a[l];</span><br><span class="line">	<span class="keyword">int</span> d=Log[id[l]]-Log[id[l]^id[r]];</span><br><span class="line">	<span class="keyword">return</span> max(max(s[d][l],s[d][r]),p[d][l]+p[d][r]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">	len=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(len&lt;n)len=len*<span class="number">2</span>;</span><br><span class="line">	Log[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len*<span class="number">2</span>;i++)Log[i]=Log[i&gt;&gt;<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">	build(<span class="number">1</span>,<span class="number">1</span>,len,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;m);</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;l,&amp;r);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,find(l,r));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/31/牛客练习赛7/" class="archive-article-date">
-  	<time datetime="2019-03-31T13:17:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/31/牛客练习赛7/">牛客练习赛7</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xuxuxuxuxuxjh.github.io/2019/04/15/猫树学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/3-23模拟赛/" class="archive-article-date">
-  	<time datetime="2019-03-23T05:23:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/11/数论作业/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数论作业</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/23/3-23模拟赛/">3.23模拟赛</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模拟赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛6/" class="archive-article-date">
-  	<time datetime="2019-03-22T12:22:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛6/">牛客练习赛6</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛4/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛4/">牛客练习赛4</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛3/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:44:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛3/">牛客练习赛3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛2/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛2/">牛客练习赛2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛1/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛1/">牛客练习赛1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/21/牛客练习赛5/" class="archive-article-date">
-  	<time datetime="2019-03-21T01:33:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/牛客练习赛5/">牛客练习赛5</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -484,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
