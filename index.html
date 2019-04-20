@@ -144,6 +144,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-切蛋糕" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/切蛋糕/">切蛋糕</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/20/切蛋糕/" class="archive-article-date">
+  	<time datetime="2019-04-20T04:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>​    Ahri得到了一个(h+1) × (w+1)的巧克力，这意味着她横着最多可以切 h 刀，竖着最多可以切 w 刀。</p>
+<p>​    她想总共切 k 刀，每刀要么竖着切要么横着切，如果竖着切了 i</p>
+<p>刀，横着切了 j 刀，会得到(i+1) × (j+1)个巧克力，定义一个切 k 刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求出期望代价，对<img src="file:///C:\Users\hahaha\AppData\Local\Temp\ksohtml7632\wps1.jpg" alt="img">取模。</p>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>一开始想了好久的dp一直想不出来<br>我们把每一部分分开了考虑<br>显然每一部分对答案的贡献就是这一部分能算进答案里的方案数<em>这一部分的价值<br>显然这里的每一部分就指的是横着切i刀，竖着切j刀<br>横着切i刀，竖着切j刀的价值很好求，就是(i+1)</em>(j+1)<br>无论怎么切，这一部分的价值都是(i+1)<em>(j+1)<br>难点在于求这一部分能算进答案里的方案数<br>我们把所有方案都画出来，就会清楚的发现怎么求了<br>方案数就是能走到这个状态的方案数</em>这个状态走到结束状态的方案数(简称来的状态和去的状态)<br>结束状态就是所有切k刀合法的状态<br>来的状态就是$a[h][i]<em>a[w][j] </em>$ (不同的切横切竖的顺序)<br>$a[h][i] <em> a[w][j]$比较好理解，但对(不同的切横切竖的顺序) 不知道怎么求<br>我们稍微转换一下：想象有一个i</em>j的矩形,起点在(0,0)，终点在(i,j)，我们每次能向右或向上走，问从起点到终点的方案数<br>这是不是就能好理解了 ，方案数就是$c[i+j ][i]$<br>去的状态就是$a[n-i-j][k-i-j]$</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">10005</span>;</span><br><span class="line"><span class="keyword">int</span> h,w,k,n,ans,jc[N],inv[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a+=b;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=mod)a-=mod;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kuai</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b%<span class="number">2</span>==<span class="number">1</span>)res=res*a%mod;</span><br><span class="line">		a=a*a%mod;</span><br><span class="line">		b=b/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"ahri.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"ahri.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	jc[<span class="number">0</span>]=<span class="number">1</span>;inv[<span class="number">0</span>]=inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;i++)jc[i]=jc[i<span class="number">-1</span>]*i%mod;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">10000</span>;i++)inv[i]=(mod-mod/i)*inv[mod%i]%mod;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">10000</span>;i++)inv[i]=inv[i]*inv[i<span class="number">-1</span>]%mod;</span><br><span class="line">	<span class="comment">/*for(int i=0;i&lt;=10000;i++)c[i][0]=a[i][0]=1;</span></span><br><span class="line"><span class="comment">	for(int i=1;i&lt;=10000;i++)</span></span><br><span class="line"><span class="comment">		for(int j=1;j&lt;=10000;j++)</span></span><br><span class="line"><span class="comment">		&#123;</span></span><br><span class="line"><span class="comment">			c[i][j]=add(c[i-1][j],c[i-1][j-1]);</span></span><br><span class="line"><span class="comment">			a[i][j]=c[i][j]*jc[j]%mod;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>,&amp;h,&amp;w,&amp;k);</span><br><span class="line">	n=h+w;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=h;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=w;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(i+j&gt;k)<span class="keyword">break</span>;</span><br><span class="line">			<span class="comment">//cout&lt;&lt;i&lt;&lt;" "&lt;&lt;j&lt;&lt;" "&lt;&lt;a[h][i]*a[w][j]%mod*c[i+j][i]%mod*(i+1)%mod*(j+1)%mod*a[n-i-j][k-i-j]%mod&lt;&lt;endl;</span></span><br><span class="line">			<span class="comment">//ans=add(ans,a[h][i]*a[w][j]%mod*c[i+j][i]%mod*a[n-i-j][k-i-j]%mod*(i+1)%mod*(j+1)%mod);</span></span><br><span class="line">			ans=add(ans,jc[h]*inv[h-i]%mod*jc[w]%mod*inv[w-j]%mod*jc[i+j]%mod*inv[i]%mod*inv[j]%mod*jc[n-i-j]%mod*inv[n-k]%mod*(i+<span class="number">1</span>)%mod*(j+<span class="number">1</span>)%mod);</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;ans&lt;&lt;endl;</span></span><br><span class="line">	<span class="comment">//cout&lt;&lt;(ans*kuai(a[n][k],mod-2)%mod+mod)%mod;</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;(ans*kuai(jc[n]%mod*inv[n-k]%mod,mod<span class="number">-2</span>)%mod+mod)%mod;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//一开始想了好久的dp一直想不出来</span></span><br><span class="line"><span class="comment">//我们把每一部分分开了考虑</span></span><br><span class="line"><span class="comment">//显然每一部分对答案的贡献就是这一部分能算进答案里的方案数*这一部分的价值</span></span><br><span class="line"><span class="comment">//显然这里的每一部分就指的是横着切i刀，竖着切j刀</span></span><br><span class="line"><span class="comment">//横着切i刀，竖着切j刀的价值很好求，就是(i+1)*(j+1)</span></span><br><span class="line"><span class="comment">//无论怎么切，这一部分的价值都是(i+1)*(j+1)</span></span><br><span class="line"><span class="comment">//难点在于求这一部分能算进答案里的方案数</span></span><br><span class="line"><span class="comment">//我们把所有方案都画出来，就会清楚的发现怎么求了</span></span><br><span class="line"><span class="comment">//方案数就是能走到这个状态的方案数*这个状态走到结束状态的方案数(简称来的状态和去的状态) </span></span><br><span class="line"><span class="comment">//结束状态就是所有切k刀合法的状态</span></span><br><span class="line"><span class="comment">//来的状态就是a[h][i]*a[w][j]*(不同的切横切竖的顺序) </span></span><br><span class="line"><span class="comment">//a[h][i]*a[w][j]比较好理解，但对(不同的切横切竖的顺序) 不知道怎么求 </span></span><br><span class="line"><span class="comment">//我们稍微转换一下：想象有一个i*j的矩形,起点在(0,0)，终点在(i,j)，我们每次能向右或向上走，问从起点到终点的方案数</span></span><br><span class="line"><span class="comment">//这是不是就能好理解了 ，方案数就是c[i+j][i]</span></span><br><span class="line"><span class="comment">//去的状态就是a[n-i-j][k-i-j]</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模拟赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/20/切蛋糕/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CF79D-Password" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -179,15 +257,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">思维题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">状压dp</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">思维题</a>
         		</li>
       		
 		</ul>
@@ -261,15 +339,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">思维题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线段树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">思维题</a>
         		</li>
       		
 		</ul>
@@ -836,82 +914,6 @@
 
 
   
-    <article id="post-数论作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/数论作业/">数论作业</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/11/数论作业/" class="archive-article-date">
-  	<time datetime="2019-04-11T00:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-青蛙的约会"><a href="#A-青蛙的约会" class="headerlink" title="A.青蛙的约会"></a>A.青蛙的约会</h2><p>exgcd裸题.</p>
-<p>我们设时间为$t$</p>
-<p>可列出方程:$x+nt \equiv y+mt \pmod{l}$</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">作业</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/11/数论作业/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1034,15 +1036,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
+                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1054,6 +1048,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CDQ分治</a>
               </li>
              
@@ -1062,11 +1060,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1075,6 +1073,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">

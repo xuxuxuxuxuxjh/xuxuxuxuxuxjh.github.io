@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
-  <title>Tag: 牛客练习赛 | xjh&#39;s blog</title>
+  <title>切蛋糕 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xjh&#39;s blog">
-<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/tags/牛客练习赛/index.html">
+  <meta name="description" content="题目：​    Ahri得到了一个(h+1) × (w+1)的巧克力，这意味着她横着最多可以切 h 刀，竖着最多可以切 w 刀。 ​    她想总共切 k 刀，每刀要么竖着切要么横着切，如果竖着切了 i 刀，横着切了 j 刀，会得到(i+1) × (j+1)个巧克力，定义一个切 k 刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求">
+<meta name="keywords" content="模拟赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="切蛋糕">
+<meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/04/20/切蛋糕/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
+<meta property="og:description" content="题目：​    Ahri得到了一个(h+1) × (w+1)的巧克力，这意味着她横着最多可以切 h 刀，竖着最多可以切 w 刀。 ​    她想总共切 k 刀，每刀要么竖着切要么横着切，如果竖着切了 i 刀，横着切了 j 刀，会得到(i+1) × (j+1)个巧克力，定义一个切 k 刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="file:///C:/Users/hahaha/AppData/Local/Temp/ksohtml7632/wps1.jpg">
+<meta property="og:updated_time" content="2019-04-20T04:37:42.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjh&#39;s blog">
+<meta name="twitter:title" content="切蛋糕">
+<meta name="twitter:description" content="题目：​    Ahri得到了一个(h+1) × (w+1)的巧克力，这意味着她横着最多可以切 h 刀，竖着最多可以切 w 刀。 ​    她想总共切 k 刀，每刀要么竖着切要么横着切，如果竖着切了 i 刀，横着切了 j 刀，会得到(i+1) × (j+1)个巧克力，定义一个切 k 刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求">
+<meta name="twitter:image" content="file:///C:/Users/hahaha/AppData/Local/Temp/ksohtml7632/wps1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -142,405 +149,149 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-切蛋糕" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      切蛋糕
+    </h1>
+  
+
+        
+        <a href="/2019/04/20/切蛋糕/" class="archive-article-date">
+  	<time datetime="2019-04-20T04:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>​    Ahri得到了一个(h+1) × (w+1)的巧克力，这意味着她横着最多可以切 h 刀，竖着最多可以切 w 刀。</p>
+<p>​    她想总共切 k 刀，每刀要么竖着切要么横着切，如果竖着切了 i</p>
+<p>刀，横着切了 j 刀，会得到(i+1) × (j+1)个巧克力，定义一个切 k 刀的方案的代价是每一刀切完后巧克力个数之和，假设每刀切的位置是随机选择的（即剩余能切的位置等概率随机选一个），请你求出期望代价，对<img src="file:///C:\Users\hahaha\AppData\Local\Temp\ksohtml7632\wps1.jpg" alt="img">取模。</p>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>一开始想了好久的dp一直想不出来<br>我们把每一部分分开了考虑<br>显然每一部分对答案的贡献就是这一部分能算进答案里的方案数<em>这一部分的价值<br>显然这里的每一部分就指的是横着切i刀，竖着切j刀<br>横着切i刀，竖着切j刀的价值很好求，就是(i+1)</em>(j+1)<br>无论怎么切，这一部分的价值都是(i+1)<em>(j+1)<br>难点在于求这一部分能算进答案里的方案数<br>我们把所有方案都画出来，就会清楚的发现怎么求了<br>方案数就是能走到这个状态的方案数</em>这个状态走到结束状态的方案数(简称来的状态和去的状态)<br>结束状态就是所有切k刀合法的状态<br>来的状态就是$a[h][i]<em>a[w][j] </em>$ (不同的切横切竖的顺序)<br>$a[h][i] <em> a[w][j]$比较好理解，但对(不同的切横切竖的顺序) 不知道怎么求<br>我们稍微转换一下：想象有一个i</em>j的矩形,起点在(0,0)，终点在(i,j)，我们每次能向右或向上走，问从起点到终点的方案数<br>这是不是就能好理解了 ，方案数就是$c[i+j ][i]$<br>去的状态就是$a[n-i-j][k-i-j]$</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">10005</span>;</span><br><span class="line"><span class="keyword">int</span> h,w,k,n,ans,jc[N],inv[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a+=b;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;=mod)a-=mod;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kuai</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b%<span class="number">2</span>==<span class="number">1</span>)res=res*a%mod;</span><br><span class="line">		a=a*a%mod;</span><br><span class="line">		b=b/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"ahri.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"ahri.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	jc[<span class="number">0</span>]=<span class="number">1</span>;inv[<span class="number">0</span>]=inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;i++)jc[i]=jc[i<span class="number">-1</span>]*i%mod;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">10000</span>;i++)inv[i]=(mod-mod/i)*inv[mod%i]%mod;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">10000</span>;i++)inv[i]=inv[i]*inv[i<span class="number">-1</span>]%mod;</span><br><span class="line">	<span class="comment">/*for(int i=0;i&lt;=10000;i++)c[i][0]=a[i][0]=1;</span></span><br><span class="line"><span class="comment">	for(int i=1;i&lt;=10000;i++)</span></span><br><span class="line"><span class="comment">		for(int j=1;j&lt;=10000;j++)</span></span><br><span class="line"><span class="comment">		&#123;</span></span><br><span class="line"><span class="comment">			c[i][j]=add(c[i-1][j],c[i-1][j-1]);</span></span><br><span class="line"><span class="comment">			a[i][j]=c[i][j]*jc[j]%mod;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>,&amp;h,&amp;w,&amp;k);</span><br><span class="line">	n=h+w;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=h;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=w;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(i+j&gt;k)<span class="keyword">break</span>;</span><br><span class="line">			<span class="comment">//cout&lt;&lt;i&lt;&lt;" "&lt;&lt;j&lt;&lt;" "&lt;&lt;a[h][i]*a[w][j]%mod*c[i+j][i]%mod*(i+1)%mod*(j+1)%mod*a[n-i-j][k-i-j]%mod&lt;&lt;endl;</span></span><br><span class="line">			<span class="comment">//ans=add(ans,a[h][i]*a[w][j]%mod*c[i+j][i]%mod*a[n-i-j][k-i-j]%mod*(i+1)%mod*(j+1)%mod);</span></span><br><span class="line">			ans=add(ans,jc[h]*inv[h-i]%mod*jc[w]%mod*inv[w-j]%mod*jc[i+j]%mod*inv[i]%mod*inv[j]%mod*jc[n-i-j]%mod*inv[n-k]%mod*(i+<span class="number">1</span>)%mod*(j+<span class="number">1</span>)%mod);</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;ans&lt;&lt;endl;</span></span><br><span class="line">	<span class="comment">//cout&lt;&lt;(ans*kuai(a[n][k],mod-2)%mod+mod)%mod;</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;(ans*kuai(jc[n]%mod*inv[n-k]%mod,mod<span class="number">-2</span>)%mod+mod)%mod;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//一开始想了好久的dp一直想不出来</span></span><br><span class="line"><span class="comment">//我们把每一部分分开了考虑</span></span><br><span class="line"><span class="comment">//显然每一部分对答案的贡献就是这一部分能算进答案里的方案数*这一部分的价值</span></span><br><span class="line"><span class="comment">//显然这里的每一部分就指的是横着切i刀，竖着切j刀</span></span><br><span class="line"><span class="comment">//横着切i刀，竖着切j刀的价值很好求，就是(i+1)*(j+1)</span></span><br><span class="line"><span class="comment">//无论怎么切，这一部分的价值都是(i+1)*(j+1)</span></span><br><span class="line"><span class="comment">//难点在于求这一部分能算进答案里的方案数</span></span><br><span class="line"><span class="comment">//我们把所有方案都画出来，就会清楚的发现怎么求了</span></span><br><span class="line"><span class="comment">//方案数就是能走到这个状态的方案数*这个状态走到结束状态的方案数(简称来的状态和去的状态) </span></span><br><span class="line"><span class="comment">//结束状态就是所有切k刀合法的状态</span></span><br><span class="line"><span class="comment">//来的状态就是a[h][i]*a[w][j]*(不同的切横切竖的顺序) </span></span><br><span class="line"><span class="comment">//a[h][i]*a[w][j]比较好理解，但对(不同的切横切竖的顺序) 不知道怎么求 </span></span><br><span class="line"><span class="comment">//我们稍微转换一下：想象有一个i*j的矩形,起点在(0,0)，终点在(i,j)，我们每次能向右或向上走，问从起点到终点的方案数</span></span><br><span class="line"><span class="comment">//这是不是就能好理解了 ，方案数就是c[i+j][i]</span></span><br><span class="line"><span class="comment">//去的状态就是a[n-i-j][k-i-j]</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/04/牛客练习赛13/" class="archive-article-date">
-  	<time datetime="2019-04-04T06:52:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/04/牛客练习赛13/">牛客练习赛13</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模拟赛</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xuxuxuxuxuxjh.github.io/2019/04/20/切蛋糕/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/03/牛客练习赛26/" class="archive-article-date">
-  	<time datetime="2019-04-03T12:23:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/19/CF79D-Password/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CF79D Password</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/03/牛客练习赛26/">牛客练习赛26</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/03/牛客练习赛24/" class="archive-article-date">
-  	<time datetime="2019-04-03T11:43:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/03/牛客练习赛24/">牛客练习赛24</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/01/牛客练习赛8/" class="archive-article-date">
-  	<time datetime="2019-03-31T23:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/牛客练习赛8/">牛客练习赛8</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/31/牛客练习赛7/" class="archive-article-date">
-  	<time datetime="2019-03-31T13:17:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/31/牛客练习赛7/">牛客练习赛7</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛6/" class="archive-article-date">
-  	<time datetime="2019-03-22T12:22:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛6/">牛客练习赛6</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛4/" class="archive-article-date">
-  	<time datetime="2019-03-22T09:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛4/">牛客练习赛4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛3/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:44:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛3/">牛客练习赛3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛2/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛2/">牛客练习赛2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/牛客练习赛1/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/牛客练习赛1/">牛客练习赛1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/牛客练习赛/page/2/">2</a><a class="extend next" rel="next" href="/tags/牛客练习赛/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -564,9 +315,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
