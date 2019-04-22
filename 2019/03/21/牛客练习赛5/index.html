@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="xjh&#39;s blog">
 <meta property="og:description" content="A. Split​    贪心，很明显分得要尽量均匀。 ​    二分分成几段（即答案），可以$O(n)$判断，也可$O(1)$判。 ​    时间复杂度$O(log(n))$ ​">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-02T05:09:29.612Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555931280197&di=d80999fbfa54e8528f8c3aa379e68c06&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F4cc54a824e750491697926ed5334230baf0f7c5a.jpg">
+<meta property="og:updated_time" content="2019-04-22T08:25:06.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客练习赛5">
 <meta name="twitter:description" content="A. Split​    贪心，很明显分得要尽量均匀。 ​    二分分成几段（即答案），可以$O(n)$判断，也可$O(1)$判。 ​    时间复杂度$O(log(n))$ ​">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555931280197&di=d80999fbfa54e8528f8c3aa379e68c06&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F4cc54a824e750491697926ed5334230baf0f7c5a.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -54,7 +56,7 @@
 		  <h1 class="header-author"><a href="/">xjh</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">A secret makes a woman woman.</p>
+		<p class="header-subtitle">I love banana man.</p>
 		
 
 		<nav class="header-menu">
@@ -108,7 +110,7 @@
 			  <h1 class="header-author js-header-author">xjh</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>A secret makes a woman woman.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>I love banana man.<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -194,6 +196,7 @@
 <p>全竖涂我们可以直接计算，方案为$r-l+1$</p>
 <p>全横涂 和 又竖涂又横涂 这两种情况，我们发现都要横涂，那我们用积木大赛的方法（最优的）横涂，再分治</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">int</span> n,a[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> minn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l&gt;r)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l==r)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> mn=<span class="number">1e18</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=l;i&lt;=r;i++)mn=min(mn,a[i]);</span><br><span class="line">	<span class="keyword">int</span> L=l,R=l,k=l,res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(L&lt;=r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[L]==mn)</span><br><span class="line">		&#123;</span><br><span class="line">			res+=solve(k,L<span class="number">-1</span>,mn);</span><br><span class="line">			<span class="keyword">while</span>(L&lt;=r&amp;&amp;a[L]==mn)L++;</span><br><span class="line">			k=L;</span><br><span class="line">			L--;</span><br><span class="line">		&#125;</span><br><span class="line">		L++;</span><br><span class="line">	&#125;</span><br><span class="line">	res+=solve(k,r,mn);</span><br><span class="line">	<span class="keyword">return</span> min(mn-minn+res,r-l+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;solve(<span class="number">1</span>,n,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="我爱香蕉君"><a href="#我爱香蕉君" class="headerlink" title="我爱香蕉君"></a>我爱香蕉君</h1><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1555931280197&amp;di=d80999fbfa54e8528f8c3aa379e68c06&amp;imgtype=0&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F4cc54a824e750491697926ed5334230baf0f7c5a.jpg" alt></p>
 
       
 
@@ -430,23 +433,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,6 +442,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,19 +465,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">bitset</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">退背包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
