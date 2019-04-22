@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
   <title>决策单调性学习笔记 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。 决策单调性和斜率优化差不多。 需要细心发现决策之间的递变规律。  比如：$f[k][i]=max(f[k-1][j]+suan(j+1,i))$ 决策单调性有两种做法： 1.二分栈(队列)：决策二分栈（一种单调栈）来维护所有有用的决策，其中栈顶是当前最优决策。  2.分治：然而二分栈有一个局限性，那就是必须能快速计算$w[i][j]$。">
+  <meta name="description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="决策单调性学习笔记">
 <meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/04/22/决策单调性学习笔记/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
-<meta property="og:description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。 决策单调性和斜率优化差不多。 需要细心发现决策之间的递变规律。  比如：$f[k][i]=max(f[k-1][j]+suan(j+1,i))$ 决策单调性有两种做法： 1.二分栈(队列)：决策二分栈（一种单调栈）来维护所有有用的决策，其中栈顶是当前最优决策。  2.分治：然而二分栈有一个局限性，那就是必须能快速计算$w[i][j]$。">
+<meta property="og:description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cdn.luogu.org/upload/pic/28914.png">
 <meta property="og:image" content="https://cdn.luogu.org/upload/pic/28913.png">
-<meta property="og:updated_time" content="2019-04-22T05:00:07.706Z">
+<meta property="og:updated_time" content="2019-04-22T10:32:05.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="决策单调性学习笔记">
-<meta name="twitter:description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。 决策单调性和斜率优化差不多。 需要细心发现决策之间的递变规律。  比如：$f[k][i]=max(f[k-1][j]+suan(j+1,i))$ 决策单调性有两种做法： 1.二分栈(队列)：决策二分栈（一种单调栈）来维护所有有用的决策，其中栈顶是当前最优决策。  2.分治：然而二分栈有一个局限性，那就是必须能快速计算$w[i][j]$。">
+<meta name="twitter:description" content="决策单调性（Flush Hu ）这有什么用？ 这能优化dp。">
 <meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/28914.png">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
@@ -57,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">xjh</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">I love banana man.</p>
+		<p class="header-subtitle">a secret makes a woman woman</p>
 		
 
 		<nav class="header-menu">
@@ -111,7 +111,7 @@
 			  <h1 class="header-author js-header-author">xjh</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>I love banana man.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>a secret makes a woman woman<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -172,6 +172,7 @@
       
         <h2 id="决策单调性（Flush-Hu-）"><a href="#决策单调性（Flush-Hu-）" class="headerlink" title="决策单调性（Flush Hu ）"></a>决策单调性（<a href="https://www.cnblogs.com/flashhu/p/9480669.html" target="_blank" rel="noopener">Flush Hu</a> ）</h2><p>这有什么用？</p>
 <p>这能优化dp。</p>
+<a id="more"></a>
 <p>决策单调性和斜率优化差不多。</p>
 <p>需要细心发现决策之间的递变规律。 </p>
 <p>比如：$f[k][i]=max(f[k-1][j]+suan(j+1,i))$</p>
@@ -292,6 +293,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/04/22/2-set学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          2-set学习笔记
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/21/简单的烦恼/" id="article-nav-older" class="article-nav-link-wrap">
@@ -442,10 +452,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
              
@@ -455,6 +461,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">思维题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,14 +497,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">退背包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
               </li>
              
               <li class="article-tag-list-item">
