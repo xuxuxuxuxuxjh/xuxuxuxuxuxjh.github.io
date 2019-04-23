@@ -144,6 +144,154 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CF321E-Ciel-and-Gondolas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/CF321E-Ciel-and-Gondolas/">CF321E Ciel and Gondolas</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/23/CF321E-Ciel-and-Gondolas/" class="archive-article-date">
+  	<time datetime="2019-04-23T00:17:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/23/CF321E-Ciel-and-Gondolas/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CF1000E-We-Need-More-Bosses" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/CF1000E-We-Need-More-Bosses/">CF1000E We Need More Bosses</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/22/CF1000E-We-Need-More-Bosses/" class="archive-article-date">
+  	<time datetime="2019-04-22T12:32:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="We-Need-More-Bosses"><a href="#We-Need-More-Bosses" class="headerlink" title="We Need More Bosses"></a><a href="https://www.luogu.org/problemnew/show/CF1000E" target="_blank" rel="noopener">We Need More Bosses</a></h2><h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><p>求图的直径。</p>
+<h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>tarjan缩点后做树的直径。</p>
+<p>关键是无向图，tarjan如何正确的使用。</p>
+<p>比如样例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">5</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>我们想让1,2,3成为一个scc，4和5分别成为scc。</p>
+<p>直接tarjan，由于无向图强连通分量就为1。怎么办呢？</p>
+<p>我们tarjan是记录一个fa，tarjan时不能去返回fa。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">		<span class="keyword">if</span>(x&lt;<span class="number">0</span>)a++;</span><br><span class="line">		<span class="keyword">if</span>(x&gt;<span class="number">0</span>)b++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"positive:"</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"negative:"</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tarjan</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树的直径</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/22/CF1000E-We-Need-More-Bosses/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2-set学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -762,155 +910,6 @@
 
 
   
-    <article id="post-CF1093E-Intersection-of-Permutations" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/CF1093E-Intersection-of-Permutations/">CF1093E Intersection of Permutations</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/17/CF1093E-Intersection-of-Permutations/" class="archive-article-date">
-  	<time datetime="2019-04-17T13:27:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Intersection-of-Permutations"><a href="#Intersection-of-Permutations" class="headerlink" title="Intersection of Permutations"></a><a href="https://www.luogu.org/problemnew/show/CF1093E" target="_blank" rel="noopener">Intersection of Permutations</a></h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定整数 n和两个1,…,n 的排列 a,b。</p>
-<p>m个操作，操作有两种：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CDQ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/17/CF1093E-Intersection-of-Permutations/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ZJOI2012-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/16/ZJOI2012-网络/">[ZJOI2012]网络</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/16/ZJOI2012-网络/" class="archive-article-date">
-  	<time datetime="2019-04-16T13:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ZJOI2012-网络"><a href="#ZJOI2012-网络" class="headerlink" title="[ZJOI2012]网络"></a><a href="https://www.luogu.org/problemnew/show/P2173" target="_blank" rel="noopener">[ZJOI2012]网络</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个无向图G，每个点有个权值，每条边有一个颜色。这个无向图满足以下两个条件：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/16/ZJOI2012-网络/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1069,14 +1068,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">bitset</a>
               </li>
              
@@ -1085,7 +1076,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
+                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,6 +1089,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">作业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
               </li>
             
             <div class="clearfix"></div>
