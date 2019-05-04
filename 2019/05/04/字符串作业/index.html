@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
   <title>字符串作业 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。 题解：区间dp，$f[i][j]$表示区间$[i,j]$折叠后的最短字符串长度。 考虑到折叠有两种形式，一种是:$()()$,  另一种是$(())$ 所以我们就把区间$[i,j]$分成$[i,k]+[k+1,j]$，或者分成$？([i,k">
+  <meta name="description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。">
 <meta name="keywords" content="作业">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串作业">
 <meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/05/04/字符串作业/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
-<meta property="og:description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。 题解：区间dp，$f[i][j]$表示区间$[i,j]$折叠后的最短字符串长度。 考虑到折叠有两种形式，一种是:$()()$,  另一种是$(())$ 所以我们就把区间$[i,j]$分成$[i,k]+[k+1,j]$，或者分成$？([i,k">
+<meta property="og:description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-04T00:46:23.050Z">
+<meta property="og:updated_time" content="2019-05-04T00:50:11.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串作业">
-<meta name="twitter:description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。 题解：区间dp，$f[i][j]$表示区间$[i,j]$折叠后的最短字符串长度。 考虑到折叠有两种形式，一种是:$()()$,  另一种是$(())$ 所以我们就把区间$[i,j]$分成$[i,k]+[k+1,j]$，或者分成$？([i,k">
+<meta name="twitter:description" content="题目：P4302 [SCOI2003]字符串折叠给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -168,6 +168,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="题目：P4302-SCOI2003-字符串折叠"><a href="#题目：P4302-SCOI2003-字符串折叠" class="headerlink" title="题目：P4302 [SCOI2003]字符串折叠"></a>题目：<a href="https://www.luogu.org/problemnew/show/P4302" target="_blank" rel="noopener"><strong>P4302</strong> [SCOI2003]字符串折叠</a></h2><p>给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。</p>
+<a id="more"></a>
 <h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>区间dp，$f[i][j]$表示区间$[i,j]$折叠后的最短字符串长度。</p>
 <p>考虑到折叠有两种形式，一种是:$()()$,  另一种是$(())$</p>
 <p>所以我们就把区间$[i,j]$分成$[i,k]+[k+1,j]$，或者分成$？([i,k])$</p>
@@ -469,7 +470,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,10 +487,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bfs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,23 +510,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,6 +526,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">2-set</a>
               </li>
              
@@ -541,11 +542,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">作业</a>
+                <a href="javascript:void(0)" class="js-tag color4">三元环</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三元环</a>
+                <a href="javascript:void(0)" class="js-tag color3">作业</a>
               </li>
              
               <li class="article-tag-list-item">
