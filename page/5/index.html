@@ -144,28 +144,28 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-牛客练习赛1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-尺取法(区间伸缩)算法介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/牛客练习赛1/">牛客练习赛1</a>
+      <a class="article-title" href="/2019/04/18/尺取法(区间伸缩)算法介绍/">尺取法(区间伸缩)算法介绍</a>
     </h1>
   
 
         
-        <a href="/2019/03/22/牛客练习赛1/" class="archive-article-date">
-  	<time datetime="2019-03-22T07:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
+        <a href="/2019/04/18/尺取法(区间伸缩)算法介绍/" class="archive-article-date">
+  	<time datetime="2019-04-18T10:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="A-矩阵"><a href="#A-矩阵" class="headerlink" title="A.矩阵"></a>A.<a href="https://ac.nowcoder.com/acm/contest/2/A" target="_blank" rel="noopener">矩阵</a></h2><p>​    hash好题啊，一眼看是二维hash，但我不会。怎么办？</p>
-<p>​    我只好用洛谷子矩阵的思路，先求出每行的hash值，  再每列把行的hash值hash一下。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>希望大家看后都能学会，也请大家多多点赞，谢谢。</p>
+<p>我真的很想获奖。</p>
         
       
 
@@ -179,7 +179,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
@@ -189,7 +189,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/牛客练习赛1/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/18/尺取法(区间伸缩)算法介绍/">展开全文 >></a>
         </p>
       
 
@@ -219,35 +219,562 @@
 
 
   
-    <article id="post-牛客练习赛5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CF1093E-Intersection-of-Permutations" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/21/牛客练习赛5/">牛客练习赛5</a>
+      <a class="article-title" href="/2019/04/17/CF1093E-Intersection-of-Permutations/">CF1093E Intersection of Permutations</a>
     </h1>
   
 
         
-        <a href="/2019/03/21/牛客练习赛5/" class="archive-article-date">
-  	<time datetime="2019-03-21T01:33:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
+        <a href="/2019/04/17/CF1093E-Intersection-of-Permutations/" class="archive-article-date">
+  	<time datetime="2019-04-17T13:27:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="A-Split"><a href="#A-Split" class="headerlink" title="A. Split"></a>A.<a href="https://ac.nowcoder.com/acm/contest/18/A" target="_blank" rel="noopener"> Split</a></h2><p>​    贪心，很明显分得要尽量均匀。</p>
-<p>​    二分分成几段（即答案），可以$O(n)$判断，也可$O(1)$判。</p>
-<p>​    时间复杂度$O(log(n))$</p>
-<p>​
+        <h1 id="Intersection-of-Permutations"><a href="#Intersection-of-Permutations" class="headerlink" title="Intersection of Permutations"></a><a href="https://www.luogu.org/problemnew/show/CF1093E" target="_blank" rel="noopener">Intersection of Permutations</a></h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定整数 n和两个1,…,n 的排列 a,b。</p>
+<p>m个操作，操作有两种：</p>
         
       
 
       
-    </p></div>
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CDQ</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/17/CF1093E-Intersection-of-Permutations/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ZJOI2012-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/ZJOI2012-网络/">[ZJOI2012]网络</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/16/ZJOI2012-网络/" class="archive-article-date">
+  	<time datetime="2019-04-16T13:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ZJOI2012-网络"><a href="#ZJOI2012-网络" class="headerlink" title="[ZJOI2012]网络"></a><a href="https://www.luogu.org/problemnew/show/P2173" target="_blank" rel="noopener">[ZJOI2012]网络</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一个无向图G，每个点有个权值，每条边有一个颜色。这个无向图满足以下两个条件：</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LCT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/16/ZJOI2012-网络/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-黑白树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/黑白树/">黑白树</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/16/黑白树/" class="archive-article-date">
+  	<time datetime="2019-04-16T11:47:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="黑白树"><a href="#黑白树" class="headerlink" title="黑白树"></a><a href="https://ac.nowcoder.com/acm/problem/13249" target="_blank" rel="noopener">黑白树</a></h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一棵n个点的有根树，1号点为根，相邻的两个节点之间的距离为1。树上每个节点i对应一个值k[i]。每个点都有一个颜色，初始的时候所有点都是白色的。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树形dp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/16/黑白树/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据结构板子题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/数据结构板子题/">数据结构板子题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/16/数据结构板子题/" class="archive-article-date">
+  	<time datetime="2019-04-16T11:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据结构板子题"><a href="#数据结构板子题" class="headerlink" title="数据结构板子题"></a>数据结构板子题</h1><h4 id="https-loj-ac-problem-6270"><a href="#https-loj-ac-problem-6270" class="headerlink" title="https://loj.ac/problem/6270"></a><a href="https://loj.ac/problem/6270" target="_blank" rel="noopener">https://loj.ac/problem/6270</a></h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CDQ分治</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/16/数据结构板子题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-猫树学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/15/猫树学习笔记/">猫树学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/15/猫树学习笔记/" class="archive-article-date">
+  	<time datetime="2019-04-15T13:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="猫树："><a href="#猫树：" class="headerlink" title="猫树："></a>猫树：</h1><p>能干嘛？有什么用？</p>
+<p>能在O(n log(n))的时间里预处理,然后在O(1)的时间里求出区间答案</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/15/猫树学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数论作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/11/数论作业/">数论作业</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/11/数论作业/" class="archive-article-date">
+  	<time datetime="2019-04-11T00:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-青蛙的约会"><a href="#A-青蛙的约会" class="headerlink" title="A.青蛙的约会"></a>A.青蛙的约会</h2><p>exgcd裸题.</p>
+<p>我们设时间为$t$</p>
+<p>可列出方程:$x+nt \equiv y+mt \pmod{l}$</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">作业</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/11/数论作业/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-模拟赛4-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/模拟赛4-7/">模拟赛4.7</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/07/模拟赛4-7/" class="archive-article-date">
+  	<time datetime="2019-04-07T04:40:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-划水"><a href="#A-划水" class="headerlink" title="A.划水:"></a>A.划水:</h2><p>这题不难。稍微想一下就会了。</p>
+<p>我们先看样例:1021这个数。</p>
+<p>我们把1021这个数的每一位拆开，就是1，0，2，1。</p>
+<p>我们考虑每个数对答案的贡献：</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模拟赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/07/模拟赛4-7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-牛客练习赛13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/04/牛客练习赛13/">牛客练习赛13</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/04/牛客练习赛13/" class="archive-article-date">
+  	<time datetime="2019-04-04T06:52:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-幸运数字Ⅰ"><a href="#A-幸运数字Ⅰ" class="headerlink" title="A.幸运数字Ⅰ"></a>A.<a href="https://ac.nowcoder.com/acm/contest/70/A" target="_blank" rel="noopener">幸运数字Ⅰ</a></h2><p>这题很简单啊，能明显答案只有三种情况，-1或4或7。</p>
+<p>想44,77,47……这些都没有4和7优（数量上和字典序上）</p>
+        
+      
+
+      
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -266,7 +793,82 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/21/牛客练习赛5/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/04/牛客练习赛13/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-牛客练习赛26" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/牛客练习赛26/">牛客练习赛26</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/03/牛客练习赛26/" class="archive-article-date">
+  	<time datetime="2019-04-03T12:23:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-平面"><a href="#A-平面" class="headerlink" title="A.平面"></a>A.<a href="https://ac.nowcoder.com/acm/contest/180/A" target="_blank" rel="noopener">平面</a></h2><p>这是道好题，考验的是我们的数学能力。</p>
+<p>我们可以把X分成两条直线，这不就转化为了n条互不相交直线最多能把平面分成多少部分。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">牛客练习赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/03/牛客练习赛26/">展开全文 >></a>
         </p>
       
 
@@ -298,7 +900,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -414,23 +1016,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
+                <a href="javascript:void(0)" class="js-tag color4">fft</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,6 +1044,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
               </li>
              
@@ -454,7 +1068,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,7 +1092,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">同余最短路</a>
+                <a href="javascript:void(0)" class="js-tag color3">SA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +1100,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
+                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
+                <a href="javascript:void(0)" class="js-tag color5">小白月赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">拉格朗日差值， ntt</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,6 +1117,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">李超线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">模拟退火， 学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,11 +1136,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">同余最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,10 +1169,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">作业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
               </li>
              
               <li class="article-tag-list-item">
