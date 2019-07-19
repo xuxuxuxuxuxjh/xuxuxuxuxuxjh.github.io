@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
   <title>后缀数组学习笔记 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。  作用：后缀数组能快速比较两个后缀的字典序大小，它还能求多个字符串两两的LCP。 实现： 后缀数组一般是用倍增做的，总的时间复杂度是">
+  <meta name="description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。">
 <meta name="keywords" content="学习笔记,SA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="后缀数组学习笔记">
 <meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/05/17/后缀数组学习笔记/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
-<meta property="og:description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。  作用：后缀数组能快速比较两个后缀的字典序大小，它还能求多个字符串两两的LCP。 实现： 后缀数组一般是用倍增做的，总的时间复杂度是">
+<meta property="og:description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://baike.baidu.com/pic/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/8989867/0/c2cec3fdfc03924586f1a8948694a4c27c1e25e0?fr=lemma&ct=single#aid=0&pic=c2cec3fdfc03924586f1a8948694a4c27c1e25e0">
-<meta property="og:updated_time" content="2019-05-17T06:50:00.785Z">
+<meta property="og:updated_time" content="2019-07-19T05:54:25.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="后缀数组学习笔记">
-<meta name="twitter:description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。  作用：后缀数组能快速比较两个后缀的字典序大小，它还能求多个字符串两两的LCP。 实现： 后缀数组一般是用倍增做的，总的时间复杂度是">
+<meta name="twitter:description" content="简单介绍：在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。">
 <meta name="twitter:image" content="https://baike.baidu.com/pic/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/8989867/0/c2cec3fdfc03924586f1a8948694a4c27c1e25e0?fr=lemma&ct=single#aid=0&pic=c2cec3fdfc03924586f1a8948694a4c27c1e25e0">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
@@ -170,6 +170,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="简单介绍："><a href="#简单介绍：" class="headerlink" title="简单介绍："></a>简单介绍：</h2><p>在字符串处理当中，后缀树和后缀数组都是非常有力的工具。其实后缀数组是后缀树的一个非常精巧的替代品，它比后缀树容易编程实现，能够实现后缀树的很多功能而时间复杂度也不太逊色，并且，它比后缀树所占用的空间小很多。可以说，在信息学竞赛中后缀数组比后缀树要更为实用。 </p>
+<a id="more"></a>
 <h2 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h2><p>后缀数组能快速比较两个后缀的字典序大小，它还能求多个字符串两两的LCP。</p>
 <h2 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h2><p><img src="https://baike.baidu.com/pic/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/8989867/0/c2cec3fdfc03924586f1a8948694a4c27c1e25e0?fr=lemma&amp;ct=single#aid=0&amp;pic=c2cec3fdfc03924586f1a8948694a4c27c1e25e0" alt></p>
 <p>后缀数组一般是用倍增做的，总的时间复杂度是:$O(nlogn)$,空间复杂度是:$O(4n)$</p>
@@ -433,11 +434,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
+                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,30 +466,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
               </li>
              
@@ -481,7 +474,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">思维题</a>
+                <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">主席树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +498,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCA</a>
+                <a href="javascript:void(0)" class="js-tag color1">CDQ分治</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +514,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CDQ分治</a>
+                <a href="javascript:void(0)" class="js-tag color4">CDQ</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">小白月赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,10 +534,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">模拟退火， 学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">李超线段树</a>
               </li>
              
@@ -541,7 +542,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
+                <a href="javascript:void(0)" class="js-tag color1">模拟退火， 学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,6 +551,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">退背包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,11 +574,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三元环</a>
+                <a href="javascript:void(0)" class="js-tag color4">LCT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCT</a>
+                <a href="javascript:void(0)" class="js-tag color4">三元环</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,14 +587,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性基</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
             
             <div class="clearfix"></div>
