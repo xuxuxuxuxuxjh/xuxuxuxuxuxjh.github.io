@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://xuxuxuxuxuxjh.github.io">
-  <title>2-set学习笔记 | xjh&#39;s blog</title>
+  <title>2-sat学习笔记 | xjh&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2-set题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
+  <meta name="description" content="2-sat题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
 <meta name="keywords" content="2-set">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2-set学习笔记">
+<meta property="og:title" content="2-sat学习笔记">
 <meta property="og:url" content="https://xuxuxuxuxuxjh.github.io/2019/04/22/2-set学习笔记/index.html">
 <meta property="og:site_name" content="xjh&#39;s blog">
-<meta property="og:description" content="2-set题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
+<meta property="og:description" content="2-sat题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-22T11:02:23.607Z">
+<meta property="og:updated_time" content="2019-09-18T10:46:03.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2-set学习笔记">
-<meta name="twitter:description" content="2-set题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
+<meta name="twitter:title" content="2-sat学习笔记">
+<meta name="twitter:description" content="2-sat题目：[模板]2-SAT 问题题目描述:有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。">
   
     <link rel="alternative" href="/atom.xml" title="xjh&#39;s blog" type="application/atom+xml">
   
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2-set学习笔记
+      2-sat学习笔记
     </h1>
   
 
@@ -167,18 +167,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="2-set"><a href="#2-set" class="headerlink" title="2-set"></a>2-set</h2><h4 id="题目：-模板-2-SAT-问题"><a href="#题目：-模板-2-SAT-问题" class="headerlink" title="题目：[模板]2-SAT 问题"></a>题目：<a href="https://www.luogu.org/problemnew/show/P4782" target="_blank" rel="noopener">[模板]2-SAT 问题</a></h4><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h4><p>有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。</p>
+        <h2 id="2-sat"><a href="#2-sat" class="headerlink" title="2-sat"></a>2-sat</h2><h4 id="题目：-模板-2-SAT-问题"><a href="#题目：-模板-2-SAT-问题" class="headerlink" title="题目：[模板]2-SAT 问题"></a>题目：<a href="https://www.luogu.org/problemnew/show/P4782" target="_blank" rel="noopener">[模板]2-SAT 问题</a></h4><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h4><p>有n个布尔变量$x_1~x_n$，另有m个需要满足的条件，每个条件的形式都是“$x_i$为true/false或$x_j$为true/false”。比如“$x_1$为真或$x_3$为假”、“$x_7$为假或$x_2$为假”。2-SAT 问题的目标是给每个变量赋值使得所有条件得到满足。</p>
 <a id="more"></a>
 <h4 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h4><p>0表示不选，1表示选</p>
-<p>1.a=0 , a-&gt;a’</p>
-<p>2.a=1 , a’-&gt;a</p>
-<p>3.a=1那么b=1 , a-&gt;b  b’-&gt;a’</p>
-<p>4.a=0那么b=0 , a’-&gt;b’  b-&gt;a</p>
-<p>5.a=1那么b=0 , a-&gt;b’  b-&gt;a’</p>
-<p>6.a=0那么b=1 , a’-&gt;b  b’-&gt;a</p>
-<p>7.a=0并且b=0  a=0并且b=1  a=1并且b=0  a=1并且b=1 参考3-6,进行合并</p>
-<p>8.a^b=0  a^b!=0  参考3-6,进行合并</p>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">4e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a,b,x,y,xx,yy,deep,color,tot,top;</span><br><span class="line"><span class="keyword">int</span> dfn[N],low[N],head[N],col[N],zhan[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> too,next;</span><br><span class="line">&#125;edge[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	edge[++top].too=b;edge[top].next=head[a];head[a]=top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	deep++;</span><br><span class="line">	dfn[u]=low[u]=deep;</span><br><span class="line">	zhan[++tot]=u;vis[u]=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=edge[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> v=edge[i].too;</span><br><span class="line">		<span class="keyword">if</span>(!dfn[v])&#123;tarjan(v);low[u]=min(low[u],low[v]);&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(vis[v])low[u]=min(low[u],low[v]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dfn[u]==low[u])</span><br><span class="line">	&#123;</span><br><span class="line">		color++;col[u]=color;vis[u]=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">while</span>(zhan[tot]!=u)</span><br><span class="line">		&#123;</span><br><span class="line">			col[zhan[tot]]=color;</span><br><span class="line">			vis[zhan[tot]]=<span class="literal">false</span>;</span><br><span class="line">			tot--;</span><br><span class="line">		&#125;</span><br><span class="line">		tot--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TWO_SAT</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)</span><br><span class="line">		<span class="keyword">if</span>(!dfn[i])tarjan(i);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(col[i]==col[i+n])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;a,&amp;x,&amp;b,&amp;y);</span><br><span class="line">		xx=x^<span class="number">1</span>;yy=y^<span class="number">1</span>;</span><br><span class="line">		add(a+xx*n,b+y*n);</span><br><span class="line">		add(b+yy*n,a+x*n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(TWO_SAT())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"POSSIBLE\n"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,col[i]&gt;col[i+n]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"IMPOSSIBLE"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.<strong>a=0 , a-&gt;a</strong>‘</p>
+<p>2.<strong>a=1 , a’-&gt;a</strong></p>
+<p>3.<strong>a=1</strong>那么<strong>b=1</strong> , <strong>a-&gt;b  b’-&gt;a’</strong>(隐藏<strong>b=0</strong>那么<strong>a=0</strong>)</p>
+<p>4.<strong>a=0</strong>那么<strong>b=0</strong> , <strong>a’-&gt;b’  b-&gt;a</strong>(隐藏<strong>b=1</strong>那么<strong>a=1</strong>)</p>
+<p>5.<strong>a=1</strong>那么<strong>b=0</strong> , <strong>a-&gt;b’  b-&gt;a’</strong>(隐藏<strong>b=1</strong>那么<strong>a=0</strong>)</p>
+<p>6.<strong>a=0</strong>那么<strong>b=1</strong> , <strong>a’-&gt;b  b’-&gt;a</strong>(隐藏<strong>b=0</strong>那么<strong>a=1</strong>)</p>
+<p>7.<strong>a=0</strong>并且<strong>b=0</strong>  <strong>a=0</strong>并且<strong>b=1</strong>  <strong>a=1</strong>并且<strong>b=0  a=1</strong>并且<strong>b=1</strong> 参考3-6,进行合并</p>
+<p>8.<strong>a^b=0  a^b!=0</strong>  参考3-6,进行合并</p>
+<p>如果<strong>col[a]==col[a’]</strong>,那么<strong>无解</strong>。</p>
+<p>关于求一组解，由于我们知道tarjan的dfn序其实就是拓扑的<strong>反序</strong>，所以当<strong>col[a]&lt;col[a’]</strong>时，a=1。</p>
+<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> next Next</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> last Last</span></span><br><span class="line"><span class="comment">/*char buf[1&lt;&lt;21],*p1=buf,*p2=buf;</span></span><br><span class="line"><span class="comment">inline int gc()&#123;return p1==p2&amp;&amp;(p2=(p1=buf)+fread(buf,1,1&lt;&lt;21,stdin),p1==p2)?EOF:*p1++;&#125;*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gc getchar</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> c=gc();</span><br><span class="line">	<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">1</span>;c=gc();&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))&#123;ret=ret*<span class="number">10</span>+c<span class="number">-48</span>;c=gc();&#125;</span><br><span class="line">	<span class="keyword">if</span>(f)<span class="keyword">return</span> -ret;<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,top,deep,tot,color;</span><br><span class="line"><span class="keyword">int</span> dfn[N],low[N],zhan[N],col[N],head[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> too,next;</span><br><span class="line">&#125;edge[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	edge[++top].too=b;edge[top].next=head[a];head[a]=top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	deep++;dfn[u]=low[u]=deep;</span><br><span class="line">	vis[u]=<span class="literal">true</span>;zhan[++tot]=u;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=edge[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> v=edge[i].too;</span><br><span class="line">		<span class="keyword">if</span>(!dfn[v])&#123;tarjan(v);low[u]=min(low[u],low[v]);&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(vis[v])low[u]=min(low[u],low[v]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dfn[u]==low[u])</span><br><span class="line">	&#123;</span><br><span class="line">		color++;vis[u]=<span class="literal">false</span>;col[u]=color;</span><br><span class="line">		<span class="keyword">while</span>(zhan[tot]!=u)</span><br><span class="line">		&#123;</span><br><span class="line">			vis[zhan[tot]]=<span class="literal">false</span>;</span><br><span class="line">			col[zhan[tot]]=color;</span><br><span class="line">			tot--;</span><br><span class="line">		&#125;</span><br><span class="line">		tot--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TWO_SAT</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)</span><br><span class="line">		<span class="keyword">if</span>(!dfn[i])tarjan(i);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(col[i]==col[i+n])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=read();m=read();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a=read(),x=read(),b=read(),y=read();</span><br><span class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(y==<span class="number">0</span>)<span class="comment">//a=1那么b=0(b=1那么a=0) </span></span><br><span class="line">			&#123;</span><br><span class="line">				add(a,b+n);</span><br><span class="line">				add(b,a+n);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;<span class="comment">//a=1那么b=1(b=0那么a=0) </span></span><br><span class="line">				add(a,b);</span><br><span class="line">				add(b+n,a+n);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(y==<span class="number">0</span>)<span class="comment">//a=0那么b=0(b=1那么a=1) </span></span><br><span class="line">			&#123;</span><br><span class="line">				add(a+n,b+n);</span><br><span class="line">				add(b,a);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;<span class="comment">//a=0那么b=1(b=0那么a=1) </span></span><br><span class="line">				add(a+n,b);</span><br><span class="line">				add(b+n,a);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">if</span>(TWO_SAT())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"POSSIBLE"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,col[i]&lt;col[i+n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"IMPOSSIBLE"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="题目：-JSOI2010-满汉全席"><a href="#题目：-JSOI2010-满汉全席" class="headerlink" title="题目：[JSOI2010]满汉全席"></a>题目：<a href="https://www.luogu.org/problemnew/show/P4171" target="_blank" rel="noopener">[JSOI2010]满汉全席</a></h4><h4 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100005</span>;</span><br><span class="line"><span class="keyword">int</span> T,n,m,x,y,xx,yy,deep,color,cnt,tot,top;</span><br><span class="line"><span class="keyword">int</span> dfn[N],low[N],head[N],col[N],zhan[N];</span><br><span class="line"><span class="keyword">char</span> s1[<span class="number">50</span>],s2[<span class="number">50</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> too,next;</span><br><span class="line">&#125;edge[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    edge[++top].too=b;edge[top].next=head[a];head[a]=top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    deep++;</span><br><span class="line">    dfn[u]=low[u]=deep;</span><br><span class="line">    zhan[++tot]=u;vis[u]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];i;i=edge[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> v=edge[i].too;</span><br><span class="line">        <span class="keyword">if</span>(!dfn[v])&#123;tarjan(v);low[u]=min(low[u],low[v]);&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(vis[v])low[u]=min(low[u],low[v]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dfn[u]==low[u])</span><br><span class="line">    &#123;</span><br><span class="line">        color++;col[u]=color;vis[u]=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span>(zhan[tot]!=u)</span><br><span class="line">        &#123;</span><br><span class="line">            col[zhan[tot]]=color;</span><br><span class="line">            vis[zhan[tot]]=<span class="literal">false</span>;</span><br><span class="line">            tot--;</span><br><span class="line">        &#125;</span><br><span class="line">        tot--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TWO_SAT</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)</span><br><span class="line">        <span class="keyword">if</span>(!dfn[i])tarjan(i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span>(col[i]==col[i+n])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">        cnt=tot=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*n;i++)</span><br><span class="line">            head[i]=low[i]=dfn[i]=col[i]=vis[i]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%s%s"</span>,s1,s2);</span><br><span class="line">            <span class="keyword">int</span> u=<span class="number">0</span>,v=<span class="number">0</span>,k;</span><br><span class="line">            k=<span class="number">1</span>;<span class="keyword">while</span>(s1[k]&gt;=<span class="string">'0'</span>&amp;&amp;s1[k]&lt;=<span class="string">'9'</span>)u=u*<span class="number">10</span>+s1[k++]-<span class="string">'0'</span>;</span><br><span class="line">            k=<span class="number">1</span>;<span class="keyword">while</span>(s2[k]&gt;=<span class="string">'0'</span>&amp;&amp;s2[k]&lt;=<span class="string">'9'</span>)v=v*<span class="number">10</span>+s2[k++]-<span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span>(s1[<span class="number">0</span>]==<span class="string">'m'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s2[<span class="number">0</span>]==<span class="string">'h'</span>)add(u+n,v+n),add(v,u);</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(s2[<span class="number">0</span>]==<span class="string">'m'</span>)add(u+n,v),add(v+n,u);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s1[<span class="number">0</span>]==<span class="string">'h'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s2[<span class="number">0</span>]==<span class="string">'h'</span>)add(u,v+n),add(v,u+n);</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(s2[<span class="number">0</span>]==<span class="string">'m'</span>)add(u,v),add(v+n,u+n);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(TWO_SAT())<span class="built_in">printf</span>(<span class="string">"GOOD\n"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"BAD\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="题目：-NOI2017-游戏"><a href="#题目：-NOI2017-游戏" class="headerlink" title="题目：[NOI2017]游戏"></a>题目：<a href="https://www.luogu.org/problemnew/show/P3825" target="_blank" rel="noopener">[NOI2017]游戏</a></h4><h4 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h4><p>a,b,c三种赛道都是普通2-set。但x赛道不是。</p>
 <p>怎么办？由于x赛道数量少，我们暴力枚举是变成a或b即可。</p>
@@ -425,15 +427,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">fft</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模拟赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,11 +435,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+                <a href="javascript:void(0)" class="js-tag color4">fft</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
+                <a href="javascript:void(0)" class="js-tag color3">莫队</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,7 +455,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tarjan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">树的直径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">dp凸优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,10 +484,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,31 +499,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">状压dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bfs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">同余最短路</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">小白月赛</a>
+                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +507,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">拉格朗日差值， ntt</a>
+                <a href="javascript:void(0)" class="js-tag color3">SA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">李超线段树</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">同余最短路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">小白月赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">换根DP， 杂题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,11 +531,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">模拟退火， 学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">李超线段树</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">牛客练习赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">拉格朗日差值， ntt</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,23 +559,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">2-set</a>
+                <a href="javascript:void(0)" class="js-tag color1">模拟退火， 学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LCT</a>
+                <a href="javascript:void(0)" class="js-tag color5">NOIP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">三元环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LCT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,6 +580,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线性基</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">平衡树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
             
             <div class="clearfix"></div>
